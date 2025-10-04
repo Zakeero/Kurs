@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shuxratjon — Marketing bo'yicha mutaxassis | Launch</title>
+  <meta name="description" content="Shuxratjon — 4 yillik tajribaga ega marketing mutaxassisi. Telegramda 1 mln auditoriya. CodesMe asoschisi. Standart va Pro kurslariga ro'yxatdan o'ting." />
+  <style>
+    :root {
+      --brand: #ef5123;
+      --brand-600: #de4319;
+      --brand-700: #c13b16;
+      --bg: #ffffff;
+      --bg-soft: #fff7f4;
+      --text-900: #111827;
+      --text-700: #374151;
+      --text-600: #4b5563;
+      --border: #ffd7cc;
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(239, 81, 35, 0.15);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text-900);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: rgba(255,255,255,0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: 0.3px;
+    }
+    .brand-badge {
+      width: 28px; height: 28px; border-radius: 8px; background: var(--brand);
+      box-shadow: inset 0 -3px 8px rgba(0,0,0,0.15), 0 6px 14px rgba(239,81,35,0.25);
+    }
+    .nav-actions a {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--brand);
+      border-radius: 10px;
+      color: var(--brand);
+      font-weight: 600;
+    }
+    .nav-actions a.cta {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+    .nav-actions a.cta:hover { background: var(--brand-700); border-color: var(--brand-700); }
+    .nav-actions a:hover { opacity: 0.9; }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(1200px 300px at 50% -50%, #ffd7cc 0%, transparent 70%),
+                  linear-gradient(180deg, var(--bg-soft) 0%, #fff 45%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { padding: 64px 0 28px; }
+    .eyebrow {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--brand-700);
+      font-weight: 700;
+    }
+    h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      margin: 10px 0 26px;
+      color: var(--text-700);
+      font-size: clamp(15px, 2.6vw, 18px);
+      max-width: 760px;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--brand);
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+    .btn.secondary { background: #fff; color: var(--brand); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 24px 0 48px;
+    }
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat .kpi { color: var(--brand); font-weight: 800; font-size: 22px; }
+    .stat .label { color: var(--text-600); font-size: 14px; margin-top: 6px; }
+
+    /* Pricing */
+    .section { padding: 56px 0; }
+    .section h2 { font-size: clamp(24px, 3.5vw, 34px); margin: 0 0 10px; }
+    .section p.lead { color: var(--text-700); margin: 0 0 30px; }
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 22px; }
+    .price { font-size: 28px; font-weight: 800; color: var(--brand); margin: 8px 0 16px; }
+    .ul { margin: 0 0 18px; padding-left: 18px; color: var(--text-700); }
+    .ul li { margin: 6px 0; }
+
+    /* Form */
+    .form-wrap {
+      background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 600; font-size: 14px; }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input[type="text"]:focus, input[type="tel"]:focus {
+      outline: 3px solid rgba(239, 81, 35, 0.15);
+      border-color: var(--brand);
+    }
+    .disclaimer { color: var(--text-600); font-size: 12px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); background: #fff; }
+    .footer-inner { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-brand { color: var(--brand); font-weight: 800; }
+    .footer-links { display: flex; gap: 14px; align-items: center; }
+    .footer-links a { color: var(--brand-700); font-weight: 700; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .pricing { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .hero-inner { padding-top: 40px; }
+      .stats { grid-template-columns: 1fr; }
+      .nav-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <span>Shuxratjon</span>
+      </div>
+      <div class="nav-actions">
+        <a href="#kurslar">Kurslar</a>
+        <a class="cta" href="#royxat">Ro'yxatdan o'tish</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">#ef5123 — Launch sahifa</span>
+      <h1>Marketing bo'yicha 4 yillik tajriba. Telegramda 1 mln auditoriya.</h1>
+      <p class="subtitle">
+        Men Shuxratjon — CodesMe platformasi asoschisiman. 10 dan ortiq o'quvchilarni o'qitganman
+        va amaliy marketing bilimlarini qisqa va aniq qilib beraman. Quyida Standart va Pro guruhlarga
+        qabul ochilgan — joylar cheklangan.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#royxat">Hozir ro'yxatdan o'ting</a>
+        <a class="btn secondary" href="#kurslar">Kurslar tariflari</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="kpi">4 yil</div>
+          <div class="label">Marketing tajribasi</div>
+        </div>
+        <div class="stat">
+          <div class="kpi">1 mln+</div>
+          <div class="label">Telegram auditoriyasi</div>
+        </div>
+        <div class="stat">
+          <div class="kpi">CodesMe</div>
+          <div class="label">Platforma asoschisi</div>
+        </div>
+        <div class="stat">
+          <div class="kpi">10+</div>
+          <div class="label">O'quvchi tarbiyalagan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="kurslar" class="section">
+    <div class="container">
+      <h2>Kurs tariflari</h2>
+      <p class="lead">Ikki toifada qabul: Standart va Pro. O'zingizga mosini tanlang.</p>
+      <div class="pricing">
+        <!-- Standard -->
+        <div class="card">
+          <h3>Standart</h3>
+          <div class="price">499 ming so'm</div>
+          <ul class="ul">
+            <li>Asosiy darslar va amaliy topshiriqlar</li>
+            <li>Jamiyat (community) qo'llab-quvvatlovi</li>
+            <li>Oddiy darajadagi feedback</li>
+          </ul>
+          <a class="btn" href="#royxat">Standartga yozilish</a>
+        </div>
+        <!-- Pro -->
+        <div class="card">
+          <h3>Pro</h3>
+          <div class="price">999 ming so'm</div>
+          <ul class="ul">
+            <li>Barcha Standart imkoniyatlari</li>
+            <li>Qo'shimcha amaliy loyihalar</li>
+            <li>Shaxsiy feedback va maslahat</li>
+          </ul>
+          <a class="btn" href="#royxat">Pro'ga yozilish</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form (Netlify) -->
+  <section id="royxat" class="section" aria-labelledby="form-title">
+    <div class="container">
+      <div class="form-wrap">
+        <h2 id="form-title">Ro'yxatdan o'tish</h2>
+        <p class="lead">Ism familiya va telefon raqamingizni yuboring — siz bilan bog'lanamiz.</p>
+
+        <form name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="registration" />
+          <p style="display:none" aria-hidden="true">
+            <label>Bo'sh qoldiring <input name="bot-field" /></label>
+          </p>
+
+          <div>
+            <label for="full-name">Ism familiya</label>
+            <input id="full-name" name="full-name" type="text" placeholder="Shuxratjon Xudoyberdiyev" autocomplete="name" required />
+          </div>
+
+          <div>
+            <label for="phone">Telefon raqam</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="90 749 0870" pattern="[0-9+\-()\s]{9,20}" autocomplete="tel" required />
+          </div>
+
+          <button class="btn" type="submit">Yuborish</button>
+          <div class="disclaimer">Ma'lumotlaringiz faqat bog'lanish uchun ishlatiladi.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">Shuxratjon</div>
+      <div class="footer-links">
+        <a href="https://zakeeroo.uz" target="_blank" rel="noopener">zakeeroo.uz</a>
+        <a href="tel:+998907490870">90 749 0870</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
