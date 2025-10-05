@@ -3,324 +3,335 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shuxratjon — Marketing bo'yicha mutaxassis | Launch</title>
-  <meta name="description" content="Shuxratjon — 4 yillik tajribaga ega marketing mutaxassisi. Telegramda 1 mln auditoriya. CodesMe asoschisi. Standart va Pro kurslariga ro'yxatdan o'ting." />
+  <title>Shuxratjon — Marketing kurslari | CodesMe</title>
+  <meta name="description" content="Shuxratjon — Marketing sohasida 4 yillik tajriba. Telegramda 1 mln auditoriya. CodesMe asoschisi. Standart va Pro kurslar, amaliy dastur va mentorlik." />
+  <meta name="theme-color" content="#ef5123" />
   <style>
-    :root {
-      --brand: #ef5123;
-      --brand-600: #de4319;
-      --brand-700: #c13b16;
-      --bg: #ffffff;
-      --bg-soft: #fff7f4;
-      --text-900: #111827;
-      --text-700: #374151;
-      --text-600: #4b5563;
-      --border: #ffd7cc;
-      --card: #ffffff;
-      --shadow: 0 10px 25px rgba(239, 81, 35, 0.15);
+    :root{
+      --brand:#ef5123;           /* primary */
+      --brand-600:#e4491c;       /* hover */
+      --brand-700:#c53d17;       /* darker */
+      --text-900:#111827;
+      --text-700:#374151;
+      --text-600:#4b5563;
+      --bg:#ffffff;
+      --bg-soft:#fff6f2;
+      --border:#ffd7cc;
+      --card:#ffffff;
+      --ring: rgba(239,81,35,0.25);
+      --shadow: 0 14px 34px rgba(239,81,35,0.18);
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text-900);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: saturate(180%) blur(8px);
-      background: rgba(255,255,255,0.7);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      color: var(--brand);
-      letter-spacing: 0.3px;
-    }
-    .brand-badge {
-      width: 28px; height: 28px; border-radius: 8px; background: var(--brand);
-      box-shadow: inset 0 -3px 8px rgba(0,0,0,0.15), 0 6px 14px rgba(239,81,35,0.25);
-    }
-    .nav-actions a {
-      display: inline-block;
-      padding: 10px 16px;
-      border: 1px solid var(--brand);
-      border-radius: 10px;
-      color: var(--brand);
-      font-weight: 600;
-    }
-    .nav-actions a.cta {
-      background: var(--brand);
-      color: #fff;
-      border-color: var(--brand);
-    }
-    .nav-actions a.cta:hover { background: var(--brand-700); border-color: var(--brand-700); }
-    .nav-actions a:hover { opacity: 0.9; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";color:var(--text-900);background:var(--bg);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+
+    /* Skip link */
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;border:2px solid var(--brand);padding:8px 12px;border-radius:8px;z-index:1000}
+
+    /* Header/Nav */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.8);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand)}
+    .brand-badge{width:28px;height:28px;border-radius:8px;background:var(--brand);box-shadow:inset 0 -3px 8px rgba(0,0,0,.12), 0 6px 16px rgba(239,81,35,.25)}
+    .nav-links{display:flex;gap:14px;align-items:center}
+    .nav-links a{padding:8px 10px;border-radius:10px;color:var(--brand-700);font-weight:700}
+    .nav-links a:hover{background:var(--bg-soft)}
+    .nav-cta{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;font-weight:800;box-shadow:var(--shadow)}
+    .nav-cta:hover{background:var(--brand-600)}
 
     /* Hero */
-    .hero {
-      background: radial-gradient(1200px 300px at 50% -50%, #ffd7cc 0%, transparent 70%),
-                  linear-gradient(180deg, var(--bg-soft) 0%, #fff 45%);
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-inner { padding: 64px 0 28px; }
-    .eyebrow {
-      display: inline-block;
-      background: #fff;
-      border: 1px solid var(--border);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--brand-700);
-      font-weight: 700;
-    }
-    h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-    }
-    .subtitle {
-      margin: 10px 0 26px;
-      color: var(--text-700);
-      font-size: clamp(15px, 2.6vw, 18px);
-      max-width: 760px;
-    }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: 14px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--brand);
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-    .btn.secondary { background: #fff; color: var(--brand); }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0); }
+    .hero{background:radial-gradient(1200px 300px at 50% -60%, #ffd7cc 0%, transparent 70%), linear-gradient(180deg, var(--bg-soft) 0%, #fff 50%);border-bottom:1px solid var(--border)}
+    .hero-inner{padding:64px 0 36px}
+    .eyebrow{display:inline-block;background:#fff;border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--brand-700);font-weight:800}
+    h1{margin:14px 0 10px;font-size:clamp(28px,4.2vw,46px);line-height:1.15;letter-spacing:-.5px}
+    .subtitle{margin:10px 0 26px;color:var(--text-700);font-size:clamp(15px,2.6vw,19px);max-width:780px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:14px 18px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;font-weight:800;box-shadow:var(--shadow)}
+    .btn.secondary{background:#fff;color:var(--brand)}
+    .btn:hover{transform:translateY(-1px)}
 
     /* Stats */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      padding: 24px 0 48px;
-    }
-    .stat {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-    }
-    .stat .kpi { color: var(--brand); font-weight: 800; font-size: 22px; }
-    .stat .label { color: var(--text-600); font-size: 14px; margin-top: 6px; }
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px 0 44px}
+    .stat{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+    .stat .kpi{color:var(--brand);font-weight:900;font-size:22px}
+    .stat .label{color:var(--text-600);font-size:14px;margin-top:6px}
+
+    /* Sections */
+    .section{padding:56px 0}
+    .section h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 10px}
+    .lead{color:var(--text-700);margin:0 0 24px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .card{background:var(--card);border:2px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+
+    /* About/Benefits */
+    .list{margin:0;padding-left:18px;color:var(--text-700)}
+    .list li{margin:6px 0}
+    .benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .benefit{border:2px solid var(--border);border-radius:14px;background:#fff;padding:16px}
+    .benefit b{color:var(--brand)}
+
+    /* Curriculum */
+    .modules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .module{border:2px solid var(--border);border-radius:14px;background:#fff;padding:16px}
+    .module h3{margin:0 0 8px;font-size:18px}
+
+    /* Process */
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .step{background:#fff;border:2px solid var(--border);border-radius:14px;padding:16px}
+    .step .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:var(--brand);color:#fff;font-weight:800;margin-bottom:10px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    blockquote{margin:0;padding:16px;border-radius:14px;background:#fff;border:2px solid var(--border)}
+    blockquote footer{margin-top:8px;color:var(--text-600)}
+
+    /* FAQ */
+    .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    details{border:2px solid var(--border);border-radius:12px;background:#fff;padding:12px}
+    summary{cursor:pointer;font-weight:700;color:var(--brand)}
 
     /* Pricing */
-    .section { padding: 56px 0; }
-    .section h2 { font-size: clamp(24px, 3.5vw, 34px); margin: 0 0 10px; }
-    .section p.lead { color: var(--text-700); margin: 0 0 30px; }
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--card);
-      border: 2px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-    .card h3 { margin: 0 0 6px; font-size: 22px; }
-    .price { font-size: 28px; font-weight: 800; color: var(--brand); margin: 8px 0 16px; }
-    .ul { margin: 0 0 18px; padding-left: 18px; color: var(--text-700); }
-    .ul li { margin: 6px 0; }
+    .pricing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .price{font-size:28px;font-weight:900;color:var(--brand);margin:8px 0 16px}
+    .pill{display:inline-block;background:var(--bg-soft);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--brand-700)}
 
     /* Form */
-    .form-wrap {
-      background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-    form { display: grid; gap: 14px; }
-    label { font-weight: 600; font-size: 14px; }
-    input[type="text"], input[type="tel"] {
-      width: 100%;
-      padding: 14px 12px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    input[type="text"]:focus, input[type="tel"]:focus {
-      outline: 3px solid rgba(239, 81, 35, 0.15);
-      border-color: var(--brand);
-    }
-    .disclaimer { color: var(--text-600); font-size: 12px; }
+    .form-wrap{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+    form{display:grid;gap:14px}
+    label{font-weight:700;font-size:14px}
+    input[type="text"],input[type="tel"],select,textarea{width:100%;padding:12px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:16px}
+    input:focus,select:focus,textarea:focus{outline:3px solid var(--ring);border-color:var(--brand)}
+    .disclaimer{color:var(--text-600);font-size:12px}
+    .row{display:grid;gap:14px}
+    @media (min-width:720px){.row{grid-template-columns:1fr 1fr}}
 
     /* Footer */
-    footer { border-top: 1px solid var(--border); background: #fff; }
-    .footer-inner { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    .footer-brand { color: var(--brand); font-weight: 800; }
-    .footer-links { display: flex; gap: 14px; align-items: center; }
-    .footer-links a { color: var(--brand-700); font-weight: 700; }
+    footer{border-top:1px solid var(--border);background:#fff}
+    .footer-inner{padding:24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .footer-brand{color:var(--brand);font-weight:800}
+    .footer-links{display:flex;gap:14px;align-items:center}
+    .footer-links a{color:var(--brand-700);font-weight:800}
 
     /* Responsive */
-    @media (max-width: 900px) {
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .pricing { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 560px) {
-      .hero-inner { padding-top: 40px; }
-      .stats { grid-template-columns: 1fr; }
-      .nav-actions { display: none; }
-    }
+    @media (max-width:1000px){.modules{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.stats{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.modules,.testimonials,.faq,.steps,.benefits{grid-template-columns:1fr}.nav-links{display:none}}
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <a class="skip" href="#main">Kontentga o'tish</a>
+  <header aria-label="Asosiy navigatsiya">
     <div class="container nav">
       <div class="brand">
         <div class="brand-badge" aria-hidden="true"></div>
         <span>Shuxratjon</span>
       </div>
-      <div class="nav-actions">
+      <nav class="nav-links" aria-label="Bo'limlar">
+        <a href="#about">Men haqimda</a>
+        <a href="#benefits">Afzalliklar</a>
+        <a href="#curriculum">Dars rejasi</a>
+        <a href="#process">Jarayon</a>
+        <a href="#testimonials">Sharhlar</a>
+        <a href="#faq">FAQ</a>
         <a href="#kurslar">Kurslar</a>
-        <a class="cta" href="#royxat">Ro'yxatdan o'tish</a>
-      </div>
+      </nav>
+      <a class="nav-cta" href="#royxat">Ro'yxatdan o'tish</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
-      <span class="eyebrow">CodesME</span>
-      <h1>Marketing bo'yicha 4 yillik tajriba. Telegramda 1 mln auditoriya.</h1>
-      <p class="subtitle">
-        Men Shuxratjon — CodesMe platformasi asoschisiman. 10 dan ortiq o'quvchilarni o'qitganman
-        va amaliy marketing bilimlarini qisqa va aniq qilib beraman. Quyida Standart va Pro guruhlarga
-        qabul ochilgan — joylar cheklangan.
-      </p>
+      <span class="eyebrow">CodesMe</span>
+      <h1>Marketing bo'yicha amaliy kurslar — 4 yillik tajriba, 1 mln+ auditoriya</h1>
+      <p class="subtitle">Men Shuxratjon — CodesMe platformasi asoschisiman. 10 dan ortiq o‘quvchilarni o‘qitganman va amaliy marketing bilimlarini qisqa, aniq va natijaga yo‘naltirilgan tarzda taqdim etaman.</p>
       <div class="hero-cta">
         <a class="btn" href="#royxat">Hozir ro'yxatdan o'ting</a>
         <a class="btn secondary" href="#kurslar">Kurslar tariflari</a>
       </div>
-
-      <div class="stats">
-        <div class="stat">
-          <div class="kpi">4 yil</div>
-          <div class="label">Marketing tajribasi</div>
-        </div>
-        <div class="stat">
-          <div class="kpi">1 mln+</div>
-          <div class="label">Telegram auditoriyasi</div>
-        </div>
-        <div class="stat">
-          <div class="kpi">CodesMe</div>
-          <div class="label">Platforma asoschisi</div>
-        </div>
-        <div class="stat">
-          <div class="kpi">10+</div>
-          <div class="label">O'quvchi tarbiyalagan</div>
-        </div>
+      <div class="stats" aria-label="Ko'rsatkichlar">
+        <div class="stat"><div class="kpi">Shuxratjon</div><div class="label">Ismim</div></div>
+        <div class="stat"><div class="kpi">4 yil</div><div class="label">Marketing tajribasi</div></div>
+        <div class="stat"><div class="kpi">1 mln+</div><div class="label">Telegram auditoriyasi</div></div>
+        <div class="stat"><div class="kpi">CodesMe</div><div class="label">Platforma asoschisi</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section id="kurslar" class="section">
-    <div class="container">
-      <h2>Kurs tariflari</h2>
-      <p class="lead">Ikki toifada qabul: Standart va Pro. O'zingizga mosini tanlang.</p>
-      <div class="pricing">
-        <!-- Standard -->
+  <main id="main">
+    <!-- About & Benefits -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container grid-2">
         <div class="card">
-          <h3>Standart</h3>
-          <div class="price">499 ming so'm</div>
-          <ul class="ul">
-            <li>Asosiy darslar va amaliy topshiriqlar</li>
-            <li>Jamiyat (community) qo'llab-quvvatlovi</li>
-            <li>Oddiy darajadagi feedback</li>
+          <h2 id="about-title">Men haqimda</h2>
+          <ul class="list">
+            <li><strong>Ismim:</strong> Shuxratjon</li>
+            <li>Marketing sohasida <strong>4 yillik tajribaga</strong> egaman</li>
+            <li>Telegramda umumiy auditoriyam: <strong>1 mln</strong></li>
+            <li><strong>CodesMe</strong> platformasi asoschisiman</li>
+            <li><strong>10 dan ortiq</strong> o‘quvchilar o‘qitganman</li>
           </ul>
-          <a class="btn" href="#royxat">Standartga yozilish</a>
         </div>
-        <!-- Pro -->
-        <div class="card">
-          <h3>Pro</h3>
-          <div class="price">999 ming so'm</div>
-          <ul class="ul">
-            <li>Barcha Standart imkoniyatlari</li>
-            <li>Qo'shimcha amaliy loyihalar</li>
-            <li>Shaxsiy feedback va maslahat</li>
-          </ul>
-          <a class="btn" href="#royxat">Pro'ga yozilish</a>
+        <div class="card" id="benefits">
+          <h2>Afzalliklar</h2>
+          <div class="benefits">
+            <div class="benefit"><b>Natijaga yo'naltirilgan</b><br/>Har bir modul amaliy topshiriqlar bilan.
+            </div>
+            <div class="benefit"><b>Soddalik</b><br/>Murakkab mavzular oddiy tilda tushuntiriladi.
+            </div>
+            <div class="benefit"><b>Jamiyat</b><br/>Yopiq community va hamkorlik loyihalari.
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Registration Form (Netlify) -->
-  <section id="royxat" class="section" aria-labelledby="form-title">
-    <div class="container">
-      <div class="form-wrap">
-        <h2 id="form-title">Ro'yxatdan o'tish</h2>
-        <p class="lead">Ism familiya va telefon raqamingizni yuboring — siz bilan bog'lanamiz.</p>
-
-        <form name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="registration" />
-          <p style="display:none" aria-hidden="true">
-            <label>Bo'sh qoldiring <input name="bot-field" /></label>
-          </p>
-
-          <div>
-            <label for="full-name">Ism familiya</label>
-            <input id="full-name" name="full-name" type="text" placeholder="Azizbek Lapasov" autocomplete="name" required />
-          </div>
-
-          <div>
-            <label for="phone">Telefon raqam</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="91 234 56 78" pattern="[0-9+\-()\s]{9,20}" autocomplete="tel" required />
-          </div>
-
-          <button class="btn" type="submit">Yuborish</button>
-          <div class="disclaimer">Ma'lumotlaringiz faqat bog'lanish uchun ishlatiladi.</div>
-        </form>
+    <!-- Curriculum -->
+    <section id="curriculum" class="section" aria-labelledby="cur-title">
+      <div class="container">
+        <h2 id="cur-title">Dars rejasi</h2>
+        <p class="lead">Kurs davomida quyidagi yo'nalishlar bosqichma-bosqich o'rganiladi.</p>
+        <div class="modules">
+          <div class="module"><h3>1-modul: Asoslar</h3><ul class="list"><li>Bozor va auditoriya tahlili</li><li>Qadriyat taklifi (UVP)</li><li>Raqobatchilar xaritasi</li></ul></div>
+          <div class="module"><h3>2-modul: Kontent</h3><ul class="list"><li>Kontent strategiyasi</li><li>Telegram kanallar uchun formatlar</li><li>Kontent kalendari</li></ul></div>
+          <div class="module"><h3>3-modul: Trafik</h3><ul class="list"><li>Organik va pullik kanal</li><li>Hamkorlik va barter</li><li>Micro-influencer taktikasi</li></ul></div>
+          <div class="module"><h3>4-modul: Analitika</h3><ul class="list"><li>Funnel va metriclar</li><li>Test va optimizatsiya</li><li>ROI hisoblash</li></ul></div>
+          <div class="module"><h3>5-modul: Sotiqlar</h3><ul class="list"><li>Offer va landing</li><li>Lead nurturing</li><li>Script va objection handling</li></ul></div>
+          <div class="module"><h3>Bonus: Pro</h3><ul class="list"><li>Shaxsiy brend</li><li>Case study sessiyasi</li><li>1:1 maslahat (Pro)</li></ul></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section" aria-labelledby="proc-title">
+      <div class="container">
+        <h2 id="proc-title">O'qish jarayoni</h2>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><b>Start</b><br/>Ro'yxatdan o'ting va tarifni tanlang.</div>
+          <div class="step"><div class="num">2</div><b>Kirish</b><br/>Platformaga kirish va dastlabki yo'riqnoma.</div>
+          <div class="step"><div class="num">3</div><b>Amaliyot</b><br/>Darslar + topshiriqlar, haftalik feedback.</div>
+          <div class="step"><div class="num">4</div><b>Natija</b><br/>Yakuniy loyiha va keyingi reja.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section" aria-labelledby="test-title">
+      <div class="container">
+        <h2 id="test-title">O'quvchilar fikri</h2>
+        <div class="testimonials">
+          <blockquote>
+            "Kontent kalendari va sotuv voronkasi bo'yicha amaliy maslahatlar ish berdi. 3 haftada leadlar 2 baravar oshdi."
+            <footer>— Dilnoza A., SMM mutaxassisi</footer>
+          </blockquote>
+          <blockquote>
+            "Pro paketdagi 1:1 sessiya eng foydali bo'ldi. Strategiya aniq, natija tez."
+            <footer>— Mirjalol K., tadbirkor</footer>
+          </blockquote>
+          <blockquote>
+            "Telegram kanalimiz organik o'sishi qayta tiklandi. Real misollar juda ko'p."
+            <footer>— Maftuna R., media menejer</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Ko'p so'raladigan savollar</h2>
+        <div class="faq">
+          <details><summary>Kurs davomiyligi qancha?</summary><div>4–6 hafta, haftasiga 2–3 modul.</div></details>
+          <details><summary>Pro tarif nimasi bilan farq qiladi?</summary><div>Qo'shimcha bonus modul, yopiq resurslar va 1:1 maslahat.</div></details>
+          <details><summary>Qanday tayyorgarlik kerak?</summary><div>Asosiy kompyuter savodxonligi va marketingga qiziqish yetarli.</div></details>
+          <details><summary>To'lov usullari?</summary><div>O'zbekistondagi ommabop to'lov tizimlari qo'llaniladi.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="kurslar" class="section" aria-labelledby="price-title">
+      <div class="container">
+        <h2 id="price-title">Kurs tariflari</h2>
+        <p class="lead">2 ta kurs toifasi mavjud — ehtiyojingizga mosini tanlang.</p>
+        <div class="pricing">
+          <div class="card">
+            <span class="pill">Standart</span>
+            <div class="price">499 000 so'm</div>
+            <ul class="list"><li>Asosiy darslar va amaliy topshiriqlar</li><li>Jamiyat (community) qo'llab-quvvatlovi</li><li>Oddiy darajadagi feedback</li></ul>
+            <a class="btn" href="#royxat">Standartga yozilish</a>
+          </div>
+          <div class="card">
+            <span class="pill">Pro</span>
+            <div class="price">999 000 so'm</div>
+            <ul class="list"><li>Barcha Standart imkoniyatlari</li><li>Qo'shimcha amaliy loyihalar va resurslar</li><li>Shaxsiy feedback va 1:1 maslahat</li></ul>
+            <a class="btn" href="#royxat">Pro'ga yozilish</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration (Netlify Form) -->
+    <section id="royxat" class="section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="form-wrap">
+          <h2 id="form-title">Ro'yxatdan o'tish</h2>
+          <p class="lead">Ma'lumotlaringizni yuboring — tez orada bog'lanamiz.</p>
+
+          <form name="royxatdan-otish" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="royxatdan-otish" />
+            <p style="display:none" aria-hidden="true">
+              <label>Bo'sh qoldiring <input name="bot-field" /></label>
+            </p>
+
+            <div class="row">
+              <div>
+                <label for="ism">Ism</label>
+                <input id="ism" name="Ism" type="text" placeholder="Shuxratjon" autocomplete="given-name" required />
+              </div>
+              <div>
+                <label for="tel">Telefon</label>
+                <input id="tel" name="Telefon" type="tel" inputmode="tel" placeholder="90 749 08 70" pattern="[0-9+\-()\s]{9,20}" autocomplete="tel" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="tg">Telegram username</label>
+                <input id="tg" name="Telegram" type="text" placeholder="@username" />
+              </div>
+              <div>
+                <label for="kurs">Kurs toifasi</label>
+                <select id="kurs" name="Kurs toifasi" required>
+                  <option value="" disabled selected>Tanlang</option>
+                  <option value="Standart — 499 000 so'm">Standart — 499 000 so'm</option>
+                  <option value="Pro — 999 000 so'm">Pro — 999 000 so'm</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="izoh">Izoh (ixtiyoriy)</label>
+              <textarea id="izoh" name="Izoh" rows="3" placeholder="Qisqa izoh yoki savolingiz..."></textarea>
+            </div>
+
+            <button class="btn" type="submit">Yuborish</button>
+            <div class="disclaimer">Ma'lumotlaringiz faqat bog'lanish uchun ishlatiladi.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
-      <div class="footer-brand">Shuxratjon</div>
+      <div class="footer-brand">sayt: <a href="https://zakeeroo.uz" target="_blank" rel="noopener">zakeeroo.uz</a></div>
       <div class="footer-links">
-        <a href="https://zakeeroo.uz" target="_blank" rel="noopener">zakeeroo.uz</a>
-        <a href="tel:+998907490870">90 749 0870</a>
+        <a href="tel:+998907490870">tel: 90 749 0870</a>
+        <a href="#top">Yuqoriga ↑</a>
       </div>
     </div>
   </footer>
